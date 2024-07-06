@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth scroll-pt-20 text-[100%];
+  }
+  html::-webkit-scrollbar {
+    @apply w-[1rem];
+  }
+  html::-webkit-scrollbar-track {
+    @apply !bg-transparent;
+  }
+  html::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-redColor h-[5rem] dark:bg-textColor;
+  }
+  body {
+    @apply text-textColor dark:text-white  dark:bg-boxColor bg-mainwhiteColor 
+    font-Jakarta overflow-x-hidden tracking-wider box-border;
+  }
+}
+
+@layer components {
+  .my_section {
+    @apply px-3 lg:px-6 mx-auto;
+  }
+  .my_btn {
+    @apply px-[9px] inline-block py-[8px] md:px-[16px] md:py-[10px] text-nowrap bg-mainColor text-white  text-base md:text-lg rounded-lg;
+  }
+  .course_btn {
+    @apply uppercase text-lg text-[#2D3142] dark:text-white dark:border-slate-400
+     border border-[#232323] rounded-full px-3 py-0.5 hover:bg-numberColor cursor-pointer;
+  }
+
+  .skill_btn {
+    @apply px-3 py-1 text-lg md:px-3 md:py-2 rounded-full border border-redColor
+     flex-auto text-center cursor-pointer hover:bg-mainColor duration-300 hover:text-white;
+  }
+
+  .nav-link {
+    @apply text-base relative hover:text-mainColor duration-300;
+  }
+  .nav-link.active{
+    @apply text-mainColor
+  }
+  
+  .nav-link::before {
+    @apply content-['']  right-0 left-0 origin-right bottom-0 scale-x-0 transition-transform
+    duration-500 w-full  absolute h-[2px] bg-mainColor;
+  }
+  .active::before,
+  .nav-link:hover::before {
+    @apply scale-x-100 origin-left;
+  }
+  .footer-nav {
+    @apply text-base font-normal hover:underline decoration-mainColor duration-300 hover:text-mainColor;
+  }
+  /* .loader-box.active {
+    @apply hidden;
+  } */
+}
+@layer utilities {
+  .clip-path-add {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  .clip-path-none {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  /* .loader-box.active {
+    display: none;
+  } */
+
+  @media (max-width: 1200px) {
+    html {
+      font-size: 100%;
+    }
+  }
+  @media (max-width: 992px) {
+    html {
+      font-size: 95%;
+    }
+  }
+  @media (max-width: 768px) {
+    html {
+      font-size: 85%;
+    }
+  }
+
+  @media (max-width: 557px) {
+    html {
+      font-size: 82%;
+    }
+  }
+  @media (max-width: 480px) {
+    html {
+      font-size: 80%;
+    }
+  }
+  @media (max-width: 270px) {
+    html {
+      font-size: 70%;
+    }
+  }
+}
